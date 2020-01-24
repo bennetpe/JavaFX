@@ -1,7 +1,6 @@
 package gui.graphics.bezier;
 
 import javafx.application.Application;
-import javafx.geometry.Point2D;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -17,23 +16,15 @@ import javafx.stage.Stage;
  */
 public class Bezier extends Application
 {
-    private Canvas canvas;
+    private Canvas canvas; // GraphicsContext kann keine Pane benutzen, daher Canvas in Pane stecken sowie doe Circle shapes
 
-    private Point2D start = new Point2D(100, 200);
+    private Circle startC = new Circle(100, 200, DURCHMESSER / 2, Color.RED);
 
-    private Point2D end = new Point2D(400, 200);
+    private Circle endC = new Circle(400, 200, DURCHMESSER / 2, Color.DARKBLUE);
 
-    private Point2D bezierControlPointFirst = new Point2D(250, 350);
+    private Circle cntrPoint1 = new Circle(250, 350, DURCHMESSER / 2, Color.RED);
 
-    private Point2D bezierControlPointSecond = new Point2D(250, 50);
-
-    private Circle startC = new Circle(this.start.getX(), this.start.getY(), DURCHMESSER / 2, Color.RED);
-
-    private Circle endC = new Circle(this.end.getX(), this.end.getY(), DURCHMESSER / 2, Color.DARKBLUE);
-
-    private Circle cntrPoint1 = new Circle(this.bezierControlPointFirst.getX(), this.bezierControlPointFirst.getY(), DURCHMESSER / 2, Color.RED);
-
-    private Circle cntrPoint2 = new Circle(this.bezierControlPointSecond.getX(), this.bezierControlPointSecond.getY(), DURCHMESSER / 2, Color.DARKBLUE);
+    private Circle cntrPoint2 = new Circle(250, 50, DURCHMESSER / 2, Color.DARKBLUE);
 
     private static final double DURCHMESSER = 10;
 
@@ -87,7 +78,7 @@ public class Bezier extends Application
      */
     public void drawShape()
     {
-        // A graphics context represents a drawing destination
+        // A graphics context represents a drawing destination 
         GraphicsContext gc = this.canvas.getGraphicsContext2D();
         // clear the drawning destination everytime you draw
         gc.clearRect(0, 0, this.canvas.getWidth(), this.canvas.getHeight());
