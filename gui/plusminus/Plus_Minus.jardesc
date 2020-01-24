@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="WINDOWS-1252" standalone="no"?>
+<jardesc>
+    <jar path="C:/Users/bennet/Desktop/PlusMinus.zip"/>
+    <options buildIfNeeded="true" compress="true" descriptionLocation="/GrafischeBenutzerOberflächen/src/gui/plusminus/Plus_Minus.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="false" overwrite="false" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+    <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+    <selectedProjects/>
+    <manifest generateManifest="true" manifestLocation="" manifestVersion="1.0" reuseManifest="false" saveManifest="false" usesManifest="true">
+        <sealing sealJar="true">
+            <packagesToSeal/>
+            <packagesToUnSeal>
+                <package handleIdentifier="=GrafischeBenutzerOberflächen/src&lt;gui.plusminus"/>
+            </packagesToUnSeal>
+        </sealing>
+    </manifest>
+    <selectedElements exportClassFiles="true" exportJavaFiles="true" exportOutputFolder="false">
+        <file path="/GrafischeBenutzerOberflächen/EclipseFormatProfile1.xml"/>
+        <file path="/GrafischeBenutzerOberflächen/.classpath"/>
+        <file path="/GrafischeBenutzerOberflächen/.checkstyle"/>
+        <javaElement handleIdentifier="=GrafischeBenutzerOberflächen/src&lt;gui.plusminus{PlusMinus.java"/>
+        <file path="/GrafischeBenutzerOberflächen/.project"/>
+        <file path="/GrafischeBenutzerOberflächen/CheckstyleConfig1.xml"/>
+    </selectedElements>
+</jardesc>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="350.0" prefWidth="220.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uebung_2_7.Controller">
+   <children>
+      <TextField fx:id="display" editable="false" layoutX="15.0" layoutY="14.0" prefHeight="35.0" prefWidth="188.0" />
+      <Button fx:id="punkt"  layoutX="21.0" layoutY="119.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="30.0" text="." GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+         
+      </Button>
+      <Button fx:id="b1"  layoutX="21.0" layoutY="269.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="30.0" text="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+         
+      </Button>
+      <Button fx:id="b3"  layoutX="121.0" layoutY="269.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="30.0" text="3" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+         
+      </Button>
+      <Button fx:id="add"  layoutX="171.0" layoutY="169.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="30.0" text="+" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+         
+      </Button>
+      <Button fx:id="b4"  layoutX="21.0" layoutY="219.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="30.0" text="4" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+         
+      </Button>
+      <Button fx:id="ergb"  layoutX="71.0" layoutY="119.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="30.0" text="=" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+         
+      </Button>
+      <Button fx:id="b5"  layoutX="71.0" layoutY="219.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="30.0" text="5" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+         
+      </Button>
+      <Button fx:id="b8"  layoutX="71.0" layoutY="169.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="30.0" text="8" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+        
+      </Button>
+      <Button fx:id="sub"  layoutX="171.0" layoutY="219.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="30.0" text="-" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+        
+      </Button>
+      <Button fx:id="mul"  layoutX="171.0" layoutY="269.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="30.0" text="*" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+        
+      </Button>
+      <Button fx:id="b7" layoutX="21.0" layoutY="169.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="30.0" text="7" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+        
+      </Button>
+      <Button fx:id="kZU" layoutX="171.0" layoutY="119.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="30.0" text=")" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+         
+      </Button>
+      <Button fx:id="b2"  layoutX="71.0" layoutY="269.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="30.0" text="2" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+         
+      </Button>
+      <Button fx:id="b9"  layoutX="121.0" layoutY="169.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="30.0" text="9" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+        
+      </Button>
+      <Button fx:id="kAUF"  layoutX="121.0" layoutY="119.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="30.0" text="(" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+       
+      </Button>
+      <Button fx:id="b6" layoutX="121.0" layoutY="219.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="30.0" text="6" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+      
+      </Button>
+      <Button fx:id="b0"  layoutX="21.0" layoutY="314.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="115.0" text="0" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+      <Button fx:id="div" contentDisplay="CENTER" layoutX="157.0" layoutY="314.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="44.0" text="/" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+         
+      </Button>
+      <Button fx:id="delete"  layoutX="118.0" layoutY="57.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="80.0" text="DELETE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+         
+      </Button>
+      <Button fx:id="clear"  layoutX="18.0" layoutY="57.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="80.0" text="CLEAR" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+         
+      </Button>
+   </children>
+</AnchorPane>

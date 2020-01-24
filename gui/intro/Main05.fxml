@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.GridPane?>
+
+<GridPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label text="Hallo Welt 123" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Label text="Nochmals hallo" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+   </children>
+</GridPane>

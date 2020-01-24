@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane prefHeight="350.0" prefWidth="220.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.calculator.Controller">
+   <children>
+      <TextField fx:id="display" editable="false" layoutX="15.0" layoutY="14.0" prefHeight="35.0" prefWidth="188.0" />
+      <Button fx:id="punkt" onAction="#buttonClicked" layoutX="21.0" layoutY="119.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="30.0" text="." GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+         
+      </Button>
+      <Button fx:id="b1" onAction="#buttonClicked" layoutX="21.0" layoutY="269.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="30.0" text="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+         
+      </Button>
+      <Button fx:id="b3" onAction="#buttonClicked" layoutX="121.0" layoutY="269.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="30.0" text="3" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+         
+      </Button>
+      <Button fx:id="add" onAction="#buttonClicked" layoutX="171.0" layoutY="169.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="30.0" text="+" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+         
+      </Button>
+      <Button fx:id="b4" onAction="#buttonClicked" layoutX="21.0" layoutY="219.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="30.0" text="4" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+         
+      </Button>
+      <Button fx:id="ergb" onAction="#buttonCompute" layoutX="71.0" layoutY="119.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="30.0" text="=" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+         
+      </Button>
+      <Button fx:id="b5" onAction="#buttonClicked" layoutX="71.0" layoutY="219.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="30.0" text="5" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+         
+      </Button>
+      <Button fx:id="b8" onAction="#buttonClicked" layoutX="71.0" layoutY="169.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="30.0" text="8" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+        
+      </Button>
+      <Button fx:id="sub" onAction="#buttonClicked" layoutX="171.0" layoutY="219.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="30.0" text="-" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+        
+      </Button>
+      <Button fx:id="mul" onAction="#buttonClicked" layoutX="171.0" layoutY="269.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="30.0" text="*" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+        
+      </Button>
+      <Button fx:id="b7" onAction="#buttonClicked" layoutX="21.0" layoutY="169.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="30.0" text="7" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+        
+      </Button>
+      <Button fx:id="kZU" onAction="#buttonClicked" layoutX="171.0" layoutY="119.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="30.0" text=")" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+         
+      </Button>
+      <Button fx:id="b2" onAction="#buttonClicked" layoutX="71.0" layoutY="269.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="30.0" text="2" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+         
+      </Button>
+      <Button fx:id="b9" onAction="#buttonClicked" layoutX="121.0" layoutY="169.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="30.0" text="9" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+        
+      </Button>
+      <Button fx:id="kAUF" onAction="#buttonClicked" layoutX="121.0" layoutY="119.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="30.0" text="(" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+       
+      </Button>
+      <Button fx:id="b6" onAction="#buttonClicked" layoutX="121.0" layoutY="219.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="30.0" text="6" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+      
+      </Button>
+      <Button fx:id="b0" onAction="#buttonClicked" layoutX="21.0" layoutY="314.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="115.0" text="0" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+      <Button fx:id="div" onAction="#buttonClicked" contentDisplay="CENTER" layoutX="157.0" layoutY="314.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="44.0" text="/" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+         
+      </Button>
+      <Button fx:id="delete" onAction="#buttonDelete" layoutX="118.0" layoutY="57.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="80.0" text="DELETE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+         
+      </Button>
+      <Button fx:id="clear" onAction="#buttonClear" layoutX="18.0" layoutY="57.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="80.0" text="CLEAR" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+         
+      </Button>
+   </children>
+</Pane>

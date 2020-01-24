@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.GridPane?>
+
+<GridPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+ fx:controller="gui.intro.Main08Controller">
+   <children>
+      <Button text="Hallo Welt" onAction="#privateButtonClicked" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+   </children>
+</GridPane>
