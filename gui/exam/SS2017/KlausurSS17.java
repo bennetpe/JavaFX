@@ -33,7 +33,7 @@ public class KlausurSS17 extends Application {
 	private ToolBar toolbar;
 	private Label anzeigeLabel;
 	private Button protokoll, delete;
-	private HBox footer;
+	private ToolBar footer;
 	private Pane protokollPane;
 	private TextArea textArea;
 	private StringBuffer stringBuffer;
@@ -65,7 +65,7 @@ public class KlausurSS17 extends Application {
 		tg = new ToggleGroup();
 		toolbar = new ToolBar();
 		lineRadio.setSelected(true);
-		footer = new HBox(10);
+		footer = new ToolBar();
 		textArea = new TextArea();
 		anzeigeLabel = new Label();
 		anzeigeLabel.setText("Lines: " + lines + " ,Circles: " + circles + " ,Rectangle: " + rectangles
@@ -75,7 +75,7 @@ public class KlausurSS17 extends Application {
 	public void addToContainer() {
 		tg.getToggles().addAll(lineRadio, circleRadio, rectangleRadio);
 		toolbar.getItems().addAll(lineRadio, circleRadio, rectangleRadio, delete);
-		footer.getChildren().addAll(anzeigeLabel, protokoll);
+		footer.getItems().addAll(anzeigeLabel, protokoll);
 	}
 
 	public void addToRoot() {
