@@ -1,7 +1,6 @@
 package gui.exam.SS2017;
 
 import javafx.application.Application;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -17,7 +16,7 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
-import javafx.stage.Modality;
+//import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class KlausurSS17 extends Application {
