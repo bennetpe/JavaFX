@@ -1,7 +1,5 @@
 package gui.exam.SS2016;
 
-import java.util.List;
-
 public class Presenter
 {
     private Model m;
@@ -21,13 +19,15 @@ public class Presenter
 
     public void addMatch(Match match)
     {
-        m.addMatch(match);
+        v.addMatch(match);
+        v.updateScores(m.getAllScores());
     }
 
 
     public void deleteMatch(Match match)
     {
         m.deleteMatch(match);
+        v.updateScores(m.getAllScores());
     }
 
     public void fillScoreList() {
@@ -49,8 +49,8 @@ public class Presenter
         this.v = v;
     }  
     
-    public void updateAllMatches() {
-        v.updateMatches(m.getAllMatches(), m.getAllScores());
+    public void updateAllScores() {
+        v.updateScores(m.getAllScores());
     }
    
     public void showDialog() {
@@ -66,9 +66,6 @@ public class Presenter
         d.cancelFuntion(); 
     }
 
-    /*
-     * TODO call model add score function
-     */
     public void onAddScore(String teamA, String teamB, int scoreA, int scoreB)
     {
         Match match = new Match(teamA, teamB, scoreA, scoreB);

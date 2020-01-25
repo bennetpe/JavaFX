@@ -86,6 +86,7 @@ public class DrawingLines extends Application
     public void initAllColors()
     {
         this.colors.add(Color.RED);
+        System.out.println(Color.RED.toString());
         this.colors.add(Color.GREEN);
         this.colors.add(Color.BLUE);
         this.colors.add(Color.BLACK);
@@ -135,7 +136,12 @@ public class DrawingLines extends Application
     @Override
     public String toString()
     {
-        // TODO Auto-generated method stub
-        return this.colorCB.toString();
+    	String tmp = "";
+        if (colorCB.getSelectionModel().getSelectedItem().equals(Color.RED)) {
+        	tmp = "Rot";
+        }
+        return tmp;
     }
+    
+   
 }

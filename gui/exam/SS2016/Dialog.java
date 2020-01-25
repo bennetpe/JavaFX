@@ -1,8 +1,5 @@
 package gui.exam.SS2016;
 
-import com.sun.prism.paint.Color;
-import com.sun.prism.paint.Paint;
-
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.scene.Scene;
@@ -119,8 +116,9 @@ public class Dialog extends DialogPane // Ist die Parent Klasse aller
             // umsetzen
             if (scoreA.getText().matches("[0-9]*") && scoreB.getText().matches("[0-9]*") && !(teamnameA.getText().equals(teamnameB.getText())) )
             {
+            	Match match = new Match(teamnameA.getText(), teamnameB.getText(), Integer.valueOf(scoreA.getText()), Integer.valueOf(scoreB.getText()));
                 p.onAddScore(teamnameA.getText(), teamnameB.getText(), Integer.valueOf(scoreA.getText()), Integer.valueOf(scoreB.getText()));
-                p.updateAllMatches();
+                p.addMatch(match);
                 validLabel.setText("Ergebnis: ist erfolgreich.");
             }
             else {

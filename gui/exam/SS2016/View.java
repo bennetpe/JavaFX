@@ -1,13 +1,10 @@
 package gui.exam.SS2016;
 
-import java.util.List;
 
 import javafx.collections.FXCollections;
-import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
@@ -48,21 +45,17 @@ public class View extends BorderPane
             p.deleteMatch(m);
             observableMatchList.remove(listViewMatch.getSelectionModel().getSelectedItem());
         }
-        else
-        {
-            return;
-        }
     }
 
     public void addMatch(Match m)
     {
-        p.addMatch(m);
+        listViewMatch.getItems().add(m);
     }
 
-    public void updateMatches(Match[] allMatches, ScoreEntry[] allScores)
+    public void updateScores(ScoreEntry[] allScores)
     {
-        observableMatchList.add(allMatches[allMatches.length - 1]);
-        observableListScore.add(allScores[allScores.length -1]);
+    	listViewScore.getItems().clear();
+    	listViewScore.getItems().addAll(allScores);
     }
 
     public void initView()
