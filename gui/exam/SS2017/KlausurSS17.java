@@ -17,6 +17,7 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class KlausurSS17 extends Application {
@@ -28,6 +29,7 @@ public class KlausurSS17 extends Application {
 	private double startX, startY;
 	private double endX, endY;
 	private RadioButton lineRadio, circleRadio, rectangleRadio;
+	private int lines = 0, circles = 0, rectangles = 0, sum = 0;
 	private ToggleGroup tg;
 	private ToolBar toolbar;
 	private Label anzeigeLabel;
@@ -45,9 +47,8 @@ public class KlausurSS17 extends Application {
 		onPressed();
 		onDragged();
 		onReleased();
-		onDelete();
 		showProtokoll();
-		updateStatus();
+		onDelete();
 		primaryStage.setScene(new Scene(root, 800, 600));
 		primaryStage.setTitle("Zeichen von Formen");
 		primaryStage.show();
@@ -65,9 +66,11 @@ public class KlausurSS17 extends Application {
 		tg = new ToggleGroup();
 		toolbar = new ToolBar();
 		lineRadio.setSelected(true);
-		anzeigeLabel = new Label("test");
 		footer = new HBox(10);
-		updateStatus();
+		textArea = new TextArea();
+		anzeigeLabel = new Label();
+		anzeigeLabel.setText("Lines: " + lines + " ,Circles: " + circles + " ,Rectangle: " + rectangles
+				+ " ,insgesamt: " + sum);
 	}
 
 	public void addToContainer() {
@@ -120,7 +123,6 @@ public class KlausurSS17 extends Application {
 			double c = Math.sqrt((a * a) - (b * b)); // c -> Radius
 			circle.setRadius(c);
 			setUpShape(circle, Color.GRAY, 0.5);
-			stringBuffer.append(circle.toString()+ "\n");
 		}
 		// TODO: Negative Skallierung vom Rectangle fixen
 		else if (rectangleRadio.isSelected()) {
@@ -146,25 +148,32 @@ public class KlausurSS17 extends Application {
 	}
 
 	public void resetAllCounter() {
-//        lines = 0;
-//        circles = 0;
-//        rectangles = 0;
-//        sum = 0;
+        lines = 0;
+        circles = 0;
+        rectangles = 0;
+        sum = 0;
 	}
 
 	public void drawDone() {
 		if (lineRadio.isSelected()) {
 			setUpShape(line, Color.BLACK, 2);
-			stringBuffer.append(line.toString());
-			System.out.println(stringBuffer.toString());
+			stringBuffer.append(line + "\n");
+			lines++;
+			sum++;
 		} else if (circleRadio.isSelected()) {
 			setUpShape(circle, Color.BLACK, 2);
-			System.out.println(stringBuffer.toString());
+			stringBuffer.append(circle + "\n");
+			circles++;
+			sum++;
 		} else if (rectangleRadio.isSelected()) {
 			setUpShape(rectangle, Color.BLACK, 2);
-			System.out.println(stringBuffer.toString());
+			stringBuffer.append(rectangle+ "\n");
+			rectangles++;
+			sum++;
 		}
-		updateStatus();
+//		updateStatus();
+		anzeigeLabel.setText("Lines: " + lines + " ,Circles: " + circles + " ,Rectangle: " + rectangles
+				+ " ,insgesamt: " + sum);
 	}
 
 	public void onReleased() {
@@ -183,6 +192,10 @@ public class KlausurSS17 extends Application {
 		delete.setOnAction(e -> {
 			resetAllCounter();
 			drawingPane.getChildren().clear();
+			anzeigeLabel.setText("Lines: " + lines + " ,Circles: " + circles + " ,Rectangle: " + rectangles
+					+ " ,insgesamt: " + sum);
+			stringBuffer = new StringBuffer("");
+			textArea.clear();
 		});
 	}
 
@@ -190,23 +203,6 @@ public class KlausurSS17 extends Application {
 		protokoll.setOnAction(e -> {
 			getProtokollStage().show();
 		});
-	}
-
-	public void updateStatus() {
-		int lines = 0, circles = 0, rectangles = 0;
-		for (Node n : drawingPane.getChildren()) {
-			if (n instanceof Line) {
-				lines++;
-			}
-			if (n instanceof Circle) {
-				circles++;
-			}
-			if (n instanceof Rectangle) {
-				rectangles++;
-			}
-			anzeigeLabel = new Label("lines: " + lines + " ,Circles: " + circles + " ,Rectangle: " + rectangles
-					+ " ,insgesamt: " + lines + circles + rectangles);
-		}
 	}
 
 	public static void main(String[] args) {
@@ -218,9 +214,12 @@ public class KlausurSS17 extends Application {
 		Stage stage = new Stage();
 		protokollPane = new Pane();
 		Scene scene = new Scene(protokollPane);
-		textArea = new TextArea(stringBuffer.toString());
+		textArea.setText(stringBuffer.toString());
+		textArea.setEditable(false);
+		protokollPane.getChildren().add(textArea);
 		stage.setScene(scene);
 		stage.setTitle("Protokoll");
+//		stage.initModality(Modality.APPLICATION_MODAL );
 		return stage;
 	}
 }
