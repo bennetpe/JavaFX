@@ -116,32 +116,32 @@ public class KlausurSS17 extends Application {
 			line.setEndY(e.getY());
 			setUpShape(line, Color.GRAY, 0.5);
 		} else if (circleRadio.isSelected()) {
-			double a = e.getX() - startX;
+			double a = e.getX() - startX; 
 			double b = e.getY() - startY;
 			double c = Math.sqrt((a * a) - (b * b)); // c -> Radius
 			circle.setRadius(c);
 			setUpShape(circle, Color.GRAY, 0.5);
 		}
-		// TODO: Negative Skallierung vom Rectangle fixen
 		else if (rectangleRadio.isSelected()) {
 			double b = endX - startX;
-			double h = endY - startY;
-			System.out.println("Start X:" + startX + "\t" + "Start Y:" + startY);
-			System.out.println("breite:" + b + "\t" + "höhe:" + h);
-			if (b > 0) {
-				rectangle.setX(startX);
-				rectangle.setWidth(b);
-			} else if (h > 0) {
+			double h = endY - startY;	
+			 if ( h > 0) {
 				rectangle.setY(startY);
 				rectangle.setHeight(h);
-			} else if (b < 0) {
-				rectangle.setX(-endX);
-				System.out.println("negative Breite X:" + rectangle.getX());
-				rectangle.setWidth(b);
-			} else if (h < 0) { // springt wann in diese Bedingung rein
-				rectangle.setY(startY+Math.abs(endY));
-				rectangle.setWidth(h);
 			}
+			 if (b > 0 ) {
+				 
+				rectangle.setX(Math.abs(startX));
+				rectangle.setWidth(b);
+			 }
+			 if ( b < 0	) {
+				 rectangle.setX(Math.abs(endX));
+				 rectangle.setWidth(-b);
+			 }
+			 if ( h < 0) {
+				 rectangle.setY(Math.abs(endY));
+				 rectangle.setHeight(-h);
+			 }
 		}
 	}
 
