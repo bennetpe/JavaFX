@@ -116,8 +116,8 @@ public class KlausurSS17 extends Application {
 			line.setEndY(e.getY());
 			setUpShape(line, Color.GRAY, 0.5);
 		} else if (circleRadio.isSelected()) {
-			double a = e.getX() - startX; 
-			double b = e.getY() - startY;
+			double a = endX - startX; 
+			double b = endY - startY;
 			double c = Math.sqrt((a * a) - (b * b)); // c -> Radius
 			circle.setRadius(c);
 			setUpShape(circle, Color.GRAY, 0.5);

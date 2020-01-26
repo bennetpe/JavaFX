@@ -68,7 +68,6 @@ public class Bezier extends Application
         c1 = new Circle(100, 200, 5, Color.BLUE);
         c2 = new Circle(250, 200, 5, Color.GREEN);
         end = new Circle(300, 50, 5, Color.PINK);
-   
     }
     
     public void bindFunctions() {
