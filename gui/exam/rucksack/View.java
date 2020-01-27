@@ -21,7 +21,7 @@ public class View extends BorderPane{
 	private VBox leftControl;
     private VBox rightControl;
     private Rectangle emptyBar = new Rectangle(200, 400, null);
-    private Rectangle fullBar = new Rectangle(200, 0, Color.GREEN);
+    private Rectangle fullBar = new Rectangle(200, 0, Color.GREEN); // merke init mit hight 0 für fillBar
     
     private ObservableList<Rucksack> obList = FXCollections.observableArrayList();
 	
@@ -36,9 +36,10 @@ public class View extends BorderPane{
 		drawingPane = new Pane();
 		emptyBar.setStroke(Color.BLACK);
 		emptyBar.setStrokeWidth(2);
-		fullBar.maxHeight(-400);
-		fullBar.setX(emptyBar.getX());
-		fullBar.setY(emptyBar.getHeight()-fullBar.getHeight());
+		fullBar.maxHeight(-400); // setze fillbar höhe auf maximal - 400
+		fullBar.setX(emptyBar.getX()); // setze fullBar auf gleiche x pos wie empty
+		fullBar.setY(emptyBar.getHeight()-fullBar.getHeight()); // setze fullBar Y-Pos auf empty.getHöhe -  fullBar.getHöhe
+		System.out.println(emptyBar.getHeight()-fullBar.getHeight());
 		drawingPane.getChildren().addAll(emptyBar,fullBar);
 		 rightControl = new VBox();
 		 leftControl = new VBox();

@@ -175,9 +175,15 @@ public class SomeShapes extends Application
         root.getChildren().add(poly2);
         Polyline poly3 = new Polyline(110, 265, 140, 265,
                                       110, 310, 140, 310);
-        poly3.setStroke(Color.RED);
+        poly3.setStroke(Color.BLACK);
         poly3.setStrokeWidth(5);
         root.getChildren().add(poly3);
+        Polygon polygonS = new Polygon();
+        polygonS.getPoints().addAll(new Double[]{
+            0.0, 0.0,
+            20.0, 5.0,
+            5.0, 20.0 });
+        root.getChildren().add(polygonS);
     }
 
     public static void main(String[] args)
