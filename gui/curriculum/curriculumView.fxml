@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="445.0" prefWidth="1356.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.curriculum.Controller">
+   <center>
+      <GridPane prefHeight="406.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="219.0" minWidth="10.0" prefWidth="49.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="208.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="284.0" minWidth="10.0" prefWidth="190.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="286.0" minWidth="10.0" prefWidth="182.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="269.0" minWidth="10.0" prefWidth="152.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="350.0" minWidth="10.0" prefWidth="248.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="335.0" minWidth="10.0" prefWidth="187.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="224.0" minWidth="10.0" prefWidth="135.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="71.0" minHeight="10.0" prefHeight="57.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="97.0" minHeight="10.0" prefHeight="55.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="89.0" minHeight="10.0" prefHeight="56.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="137.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="223.0" minHeight="10.0" prefHeight="64.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="235.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="171.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="78.0" minHeight="0.0" prefHeight="28.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ToggleButton fx:id="javaTG" blendMode="GREEN" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleJava" text="Objektorientiertes Programmieren" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="6">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="gdmTG" blendMode="GREEN" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleGrundLMathe" text="Grundlagen der Mathematik" GridPane.columnIndex="3" GridPane.rowIndex="6">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="sysadTG" blendMode="GREEN" layoutX="230.0" layoutY="392.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleSysadmin" text="Systemadministration" GridPane.columnIndex="4" GridPane.rowIndex="6">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="dsTG" blendMode="GREEN" layoutX="340.0" layoutY="392.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleDS" text="Digitale Spiele" GridPane.columnIndex="5" GridPane.rowIndex="6">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="dmTG" blendMode="GREEN" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleDM" text="Digitale Medien" GridPane.columnIndex="6" GridPane.rowIndex="6">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="rnTG" blendMode="GREEN" layoutX="560.0" layoutY="392.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleRechnernetze" text="Rechnernetze" GridPane.columnIndex="4" GridPane.rowIndex="5">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="laTG" blendMode="GREEN" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleLinAlg" text="Lineare Algebra" GridPane.columnIndex="3" GridPane.rowIndex="5">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="setTG" blendMode="GREEN" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleSoftwarEntwurfTest" text="Softwareentwurf und -test" GridPane.columnIndex="2" GridPane.rowIndex="5">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="daTG" blendMode="GREEN" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleDatenstrukturenUndAlgorithmen" text="Datenstrukturen und Algorithmen" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="wtTG" blendMode="GREEN" layoutX="10.0" layoutY="316.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleWebTechnologien" text="Web-Technologien" GridPane.columnIndex="4" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="thiTG" blendMode="GREEN" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleTheoretischeInformatik" prefHeight="170.0" prefWidth="168.0" text="Theoretische Informatik" GridPane.columnIndex="3" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="smTG" blendMode="GREEN" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleSoftwareManagement" text="Softwaremanagement" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="gboTG" blendMode="GREEN" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleGBO" text="Grafische Benutzeroberflächen" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="omTG" blendMode="GREEN" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleOnlineMedienrecht" text="Online- und Medienrecht" GridPane.columnIndex="6" GridPane.rowIndex="5">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="gdgTG" blendMode="GREEN" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleGrundlageGestaltung" text="Grundlagen der Gestaltung" GridPane.columnIndex="5" GridPane.rowIndex="5">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="weTG" blendMode="GREEN" layoutX="450.0" layoutY="316.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleWebEntwicklung" text="Web-Entwicklung" GridPane.columnIndex="6" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="bidTG" blendMode="GREEN" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBenutzerInterfaceDesign" text="Benutzerinterface Design" GridPane.columnIndex="6" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="bvgTG" blendMode="GREEN" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBenutzungGestaltung" text="Benutzung von Gestaltungswerkzeugen" GridPane.columnIndex="5" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="wp2TG" blendMode="GREEN" layoutX="450.0" layoutY="240.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleWP2" text="Wahlpflichtfach" GridPane.columnIndex="4" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="wp1TG" blendMode="GREEN" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleWP1" text="Wahlpflichtfach" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="waTG" blendMode="GREEN" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleWiArbeit" text="Wissenschaftliches Arbeiten" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="mpTG" blendMode="GREEN" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleMedienProjekt" text="Medienprojekt" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="fsTG" blendMode="GREEN" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleFachseminar" text="Fachseminar" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="eicTG" blendMode="GREEN" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleEinführungInComputergrafik" text="Einführung in die Computergrafik" GridPane.columnIndex="5" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="wp3TG" blendMode="GREEN" layoutX="450.0" layoutY="164.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleWP3" text="Wahlpflichtfach" GridPane.columnIndex="5" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="englischTG" blendMode="GREEN" layoutX="450.0" layoutY="87.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleEnglisch" text="Englisch" GridPane.columnIndex="6" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="wp5TG" blendMode="GREEN" layoutX="560.0" layoutY="87.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleWP5" text="Wahlpflichtfach" GridPane.columnIndex="5" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="wp4TG" blendMode="GREEN" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleWP4" text="Wahlpflichtfach" GridPane.columnIndex="6" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="wp6TG" blendMode="GREEN" layoutX="560.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleWP6" text="Wahlpflichtfach" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="iteamTG" blendMode="GREEN" layoutX="230.0" layoutY="87.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleTeamprojekt" text="Interdisziplinäres Teamprojekt" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="abschlussTG" blendMode="GREEN" layoutX="340.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleAbschluss" text="Abschlussarbeit" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </ToggleButton>
+            <Label text="6" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label layoutX="54.0" layoutY="40.0" text="5" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label layoutX="10.0" layoutY="40.0" text="4" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label layoutX="10.0" layoutY="40.0" text="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label layoutX="10.0" layoutY="40.0" text="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label layoutX="10.0" layoutY="346.0" text="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="6" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label text="ECTS" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="7" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label text="5" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="7" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label text="5" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="7" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label text="5" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="7" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label text="5" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="7" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label text="5" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="7" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label text="5" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="7" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label text="Semester" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Text stroke="#f5f5f5c9" strokeType="OUTSIDE" strokeWidth="0.0" text="SS 2020" textAlignment="CENTER" wrappingWidth="68.912109375" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+               <font>
+                  <Font name="Dubai Bold" size="14.0" />
+               </font>
+            </Text>
+            <Text stroke="#f5f5f5c9" strokeType="OUTSIDE" strokeWidth="0.0" text="WS 19/20" textAlignment="CENTER" wrappingWidth="62.912109375" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+               <font>
+                  <Font name="Dubai Bold" size="14.0" />
+               </font>
+            </Text>
+            <Text stroke="#f5f5f5c9" strokeType="OUTSIDE" strokeWidth="0.0" text="SS 2019" textAlignment="CENTER" wrappingWidth="57.912109375" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+               <font>
+                  <Font name="Dubai Bold" size="14.0" />
+               </font>
+            </Text>
+            <Text stroke="#f5f5f5c9" strokeType="OUTSIDE" strokeWidth="0.0" text="WS 18/19" textAlignment="CENTER" wrappingWidth="74.912109375" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+               <font>
+                  <Font name="Dubai Bold" size="14.0" />
+               </font>
+            </Text>
+            <Text stroke="#f5f5f5c9" strokeType="OUTSIDE" strokeWidth="0.0" text="SS 2018" textAlignment="CENTER" wrappingWidth="59.912109375" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+               <font>
+                  <Font name="Dubai Bold" size="14.0" />
+               </font>
+            </Text>
+            <Text stroke="#f5f5f5c9" strokeType="OUTSIDE" strokeWidth="0.0" text="WS 17/18" textAlignment="CENTER" wrappingWidth="61.912109375" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="6" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+               <font>
+                  <Font name="Dubai Bold" size="14.0" />
+               </font>
+            </Text>
+         </children>
+      </GridPane>
+   </center>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="40.0" prefWidth="978.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="erreichtLabel" alignment="CENTER" contentDisplay="CENTER" text="Erreichte ECTS Punkte: 0   " textAlignment="CENTER">
+               <opaqueInsets>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </opaqueInsets>
+            </Label>
+            <Label fx:id="fehlendLabel" text="Fehlende ECTS Punkte: 180  ">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+               <opaqueInsets>
+                  <Insets right="5.0" />
+               </opaqueInsets>
+            </Label>
+         </children>
+         <opaqueInsets>
+            <Insets left="20.0" right="20.0" top="20.0" />
+         </opaqueInsets>
+      </HBox>
+   </bottom>
+</BorderPane>
