@@ -33,6 +33,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		initView();
 		nSlider.valueProperty().addListener((obs,oldV,newV) ->{
+			hb.getChildren().clear();
 			nLabel.setText("n="+(int)nSlider.getValue());
 			for(int x = 0; x < (int)nSlider.getValue(); x ++) {
 				hb.getChildren().add(new Rectangle(BREITE, h));
@@ -49,7 +50,6 @@ public class Main extends Application {
 	}
 	
 	public void initView() {
-		drawingPane = new Pane();
 		root = new BorderPane();
 		
 		nSlider = new Slider(0, 30, 10);
@@ -61,7 +61,6 @@ public class Main extends Application {
 		hb.setAlignment(Pos.BOTTOM_LEFT);
 		vb = new VBox(4);
 		vb.getChildren().addAll(nLabel,nSlider,pLabel,pSlider);
-//		hb.getChildren().add(drawingPane);
 		root.setCenter(hb);
 		root.setBottom(vb);
 	}
