@@ -12,6 +12,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -26,7 +27,7 @@ public class Probabilities extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		BorderPane root = new BorderPane();
-		
+		drawingPane = new Pane();
 		HBox nControl = new HBox(10);
 		Label ln = new Label("n: ");
 		ln.setFont(Font.font(null, FontWeight.BOLD, 20));
@@ -64,8 +65,15 @@ public class Probabilities extends Application {
 		poisson.selectedProperty().addListener((obs, oldValue, newValue) -> {
 			update((int) nSlider.getValue(), pSlider.getValue(), poisson.isSelected());
 		});
+		drawingPane.widthProperty().addListener((obs, oldValue, newValue) -> {
+			update((int) nSlider.getValue(), pSlider.getValue(), poisson.isSelected());
+		});	
+		drawingPane.heightProperty().addListener((obs, oldValue, newValue) -> {
+			update((int) nSlider.getValue(), pSlider.getValue(), poisson.isSelected());
+		});	
 		
-		drawingPane = new Pane();
+		
+		
 		root.setCenter(drawingPane); // zeichenflaeche adden
 		
 		primaryStage.setTitle("REFERENZ");
@@ -110,6 +118,12 @@ public class Probabilities extends Application {
 			indexText.setY(yPos);
 			drawingPane.getChildren().add(rectangleBinom);
 			drawingPane.getChildren().add(indexText);
+			
+			Line mittelwert = new Line(30 + (p *effDrawWidth), yPos, 30 + (p *effDrawWidth), 30);
+			mittelwert.setStroke(Color.RED);
+			mittelwert.setStrokeWidth(4);
+			
+			drawingPane.getChildren().add(mittelwert);
 			
 			if (poisson) {
 				h = poissonProbs[i] * effDrawHeight;
