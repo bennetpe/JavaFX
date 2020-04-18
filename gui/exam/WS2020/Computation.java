@@ -1,7 +1,8 @@
 package gui.exam.WS2020;
 
-public class Computation {
 
+public class Computation {
+	
 	public static double[] computeBinomProbs(int n, double p) {
 		if (n < 1) {
 			throw new IllegalArgumentException("Bad n:" + n);
@@ -11,7 +12,7 @@ public class Computation {
 		}
 		double[] result = new double[n + 1];
 		for (int k = 0; k <= n; k++) {
-			result[k] = computeBinomCoefficient(n, k) * Math.pow(p, k) * Math.pow(n, k);
+			result[k] = computeBinomCoefficient(n, k) * Math.pow(p, k) * Math.pow(p, k); // letzte hochzahl stimmt nicht 
 		}
 		return result;
 	}
@@ -25,8 +26,8 @@ public class Computation {
 		}
 		double[] result = new double[n + 1];
 		double lambda = n * p;
-		result[0] = Math.pow(Math.E, lambda);
-		for (int k = 0; k <= n; k++) {
+		result[0] = Math.pow(Math.E, -lambda);
+		for (int k = 1; k <= n; k++) {
 			result[k] = result[k - 1] * lambda / k;
 		}
 		return result;
