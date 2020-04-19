@@ -3,6 +3,7 @@ package gui.exam.WS2020;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.VPos;
+import javafx.scene.AmbientLight;
 import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
@@ -17,12 +18,13 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 public class Probabilities extends Application {
 	private Label nLabel, pLabel;
 	private Pane drawingPane;
-	private Text indexText;
+	private Text indexText, anzeigeText;
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -94,7 +96,6 @@ public class Probabilities extends Application {
 		p = ((int) (p*1000)) / 1000.00;
 		nLabel.setText("n = " + n);
 		pLabel.setText("p = " + p);
-		
 		double[] binomProbs = Computation.computeBinomProbs(n, p);
 		double[] poissonProbs = Computation.computePoissonProbs(n, p);
 		
@@ -106,6 +107,7 @@ public class Probabilities extends Application {
 		double widthRectangle = (effDrawWidth - (4 * (numRect-1))) / numRect; // die verfügbare zeichenbreite minus anzahl rectangle * 4px padding = tatsächliche verfügbare flaeche durch anzahl der zu zeichnenden rectangles
 		
 		for(int i = 0; i < numRect; i++) {
+			final int finalIndex = i;
 			double xPos = 30 + ((4+ widthRectangle) * i);
 			double yPos = drawingPane.getHeight() - 30;
 			double h = effDrawHeight * binomProbs[i]; // die verfügbare zeichenhoehe mal den array wert an index i (werte zwischen 0 und 1) wobei 1 die Maximale Hoehe
@@ -119,6 +121,20 @@ public class Probabilities extends Application {
 			drawingPane.getChildren().add(rectangleBinom);
 			drawingPane.getChildren().add(indexText);
 			
+			anzeigeText = new Text();
+			anzeigeText.setX(effDrawWidth / 2 - anzeigeText.getBoundsInLocal().getWidth() / 2);
+			anzeigeText.setY(0);
+			anzeigeText.setTextOrigin(VPos.TOP); // bei Text beginnt die Ausrichtung unten Links somit Text Origin auf Top setzen, sonst ist er bei y = 0 nicht sichtbar
+			
+			rectangleBinom.setOnMouseEntered(e -> {
+				anzeigeText.setText("Binom("+finalIndex+")"+" = " + binomProbs[finalIndex]);
+				this.drawingPane.getChildren().add(anzeigeText);
+				System.out.println("Entered Binom");
+			});
+			rectangleBinom.setOnMouseExited(e -> {
+				System.out.println("Exit Binom");
+				drawingPane.getChildren().remove(anzeigeText);
+			});
 			Line mittelwert = new Line(30 + (p *effDrawWidth), yPos, 30 + (p *effDrawWidth), 30);
 			mittelwert.setStroke(Color.RED);
 			mittelwert.setStrokeWidth(4);
@@ -128,15 +144,22 @@ public class Probabilities extends Application {
 			if (poisson) {
 				h = poissonProbs[i] * effDrawHeight;
 				double widthGreenRectangle = widthRectangle / 3;
-				Rectangle rectanglePoission = new Rectangle(xPos + (widthRectangle / 2) - widthGreenRectangle / 2, yPos - h, widthGreenRectangle, h);
-				rectanglePoission.setFill(Color.LIGHTGREEN);
-				drawingPane.getChildren().add(rectanglePoission);
+				Rectangle rectanglePoisson = new Rectangle(xPos + (widthRectangle / 2) - widthGreenRectangle / 2, yPos - h, widthGreenRectangle, h);
+				rectanglePoisson.setFill(Color.LIGHTGREEN);
+				rectanglePoisson.setOnMouseEntered(e -> {
+					System.out.println("Entered Poisson");
+					anzeigeText.setText("Poisson("+finalIndex+")"+" = " + poissonProbs[finalIndex]);
+					this.drawingPane.getChildren().add(anzeigeText);
+				}); 
+				rectanglePoisson.setOnMouseExited(e -> {
+					System.out.println("Exit Poisson");
+					drawingPane.getChildren().remove(anzeigeText);
+				}); 
+				drawingPane.getChildren().add(rectanglePoisson);
 			}
-			
 		}
-		
 	}
-
+	
 	public static void main(String[] args) {
 		launch(args);
 	}
