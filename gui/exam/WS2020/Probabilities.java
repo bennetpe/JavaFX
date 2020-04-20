@@ -3,7 +3,6 @@ package gui.exam.WS2020;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.VPos;
-import javafx.scene.AmbientLight;
 import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
@@ -18,7 +17,6 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
-import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 public class Probabilities extends Application {
