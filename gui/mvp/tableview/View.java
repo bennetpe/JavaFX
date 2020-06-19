@@ -82,7 +82,7 @@ public class View extends BorderPane{
 	}
 	
 	public void onAdd() {
-		if(input.getText()!= null && input.getText() != "") {
+		if(input.getText().trim() != null && !input.getText().trim().isEmpty()) {
 			p.add(input.getText());
 		}
 		else {

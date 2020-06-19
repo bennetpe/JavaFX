@@ -1,4 +1,4 @@
-package gui.listview;
+package gui.TreeTableView;
 
 import javafx.scene.Parent;
 
@@ -17,10 +17,10 @@ public class Presenter {
 
 	public Parent getView() {
 		// TODO Auto-generated method stub
-		return v;
+		return v.getView();
 	}
-	
-	public void initLV() {
-		v.fillList(m.getOl());
-	}
+//	
+//	public void initLV() {
+//		v.fillList(m.getOl());
+//	}
 }

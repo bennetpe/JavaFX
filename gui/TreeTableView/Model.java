@@ -1,4 +1,4 @@
-package gui.listview;
+package gui.TreeTableView;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
