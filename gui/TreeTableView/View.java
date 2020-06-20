@@ -18,6 +18,7 @@ public class View extends BorderPane{
 	
 	private Presenter p;
 	
+	@SuppressWarnings("unchecked")
 	public void initView() {
 		Module pf = new Module("PF", 0, 0.0);
 		TreeItem<Module> pfNode = new TreeItem<>(pf);
