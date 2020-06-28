@@ -13,7 +13,14 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
-
+import javafx.util.StringConverter;
+/**
+ * 
+ * @author bennet <br>
+ * ComboBox kann editierbar gemacht werden:
+ * dann Eingabe eines Prompt-Texts möglich
+ * dann StringConverter-Methode fromString sinnvoll.
+ */
 public class DrawingLines extends Application
 {
     private Pane drawPane;
@@ -22,7 +29,7 @@ public class DrawingLines extends Application
 
     private ToolBar toolBar;
 
-    private ChoiceBox<Color> colorCB;
+    private ChoiceBox<String> colorCB;
 
     private ChoiceBox<Number> sizeCB;
 
@@ -32,8 +39,42 @@ public class DrawingLines extends Application
 
     private Line l = new Line();
 
-    private List<Color> colors = new ArrayList<>();
+    private List<String> colors = new ArrayList<>();
 
+    // fuer die richtige Anzeige in der ChoiceBox
+    StringConverter<Color> converter = new StringConverter<Color>() {
+    	
+    	@Override
+    	public Color fromString(String string) {
+    		Color color = null;
+    		if (string.equals("Red")) {
+    			color = Color.RED;
+    		}
+    		if (string.equals("Green")) {
+    			color = Color.GREEN;
+    		}
+    		if (string.equals("Blue")) {
+    			color = Color.BLUE;
+    		}
+    		return color;
+    	}
+    	
+    	@Override
+    	public String toString(Color c) {
+    		String s = null;
+    		if(c == Color.RED) {
+    			s = "Red";
+    		}
+    		if(c == Color.GREEN) {
+    			s = "Green";
+    		}
+    		if(c == Color.BLUE) {
+    			s = "Blue";
+    		}
+    		return s;
+    	}
+    	
+    };
     @Override
     public void start(Stage primaryStage)
     {
@@ -50,7 +91,7 @@ public class DrawingLines extends Application
         this.drawPane.setOnMousePressed(e ->
         {
             this.mousePressed(e.getX(), e.getY());
-            Color selectedColor = this.colorCB.getSelectionModel().getSelectedItem();
+            Color selectedColor = converter.fromString(this.colorCB.getSelectionModel().getSelectedItem());
             double size = (double) this.sizeCB.getSelectionModel().getSelectedItem() / 10;
             this.l.setStrokeWidth(size);
             this.l.setStroke(selectedColor);
@@ -62,7 +103,7 @@ public class DrawingLines extends Application
             this.mouseDragged(e.getX(), e.getY());
             double size = (double) this.sizeCB.getSelectionModel().getSelectedItem() / 10;
             this.l.setStrokeWidth(size);
-            Color selectedColor = this.colorCB.getSelectionModel().getSelectedItem();
+            Color selectedColor = converter.fromString(this.colorCB.getSelectionModel().getSelectedItem());
             this.l.setStroke(selectedColor);
         });
         this.loeschen.setOnAction(e ->
@@ -85,11 +126,11 @@ public class DrawingLines extends Application
 
     public void initAllColors()
     {
-        this.colors.add(Color.RED);
-        System.out.println(Color.RED.toString());
-        this.colors.add(Color.GREEN);
-        this.colors.add(Color.BLUE);
-        this.colors.add(Color.BLACK);
+        this.colors.add(converter.toString(Color.RED));
+        this.colors.add(converter.toString(Color.GREEN));
+        this.colors.add(converter.toString(Color.BLUE));
+        
+        System.out.println(converter.toString(Color.RED));
     }
 
     public void initAllSize()
@@ -103,9 +144,9 @@ public class DrawingLines extends Application
 
     public void FillColors()
     {
-        for (Color color : this.colors)
+        for (String colorName : this.colors)
         {
-            this.colorCB.getItems().add(color);
+            this.colorCB.getItems().add(colorName);
         }
 
         this.colorCB.getSelectionModel().selectFirst();
@@ -114,7 +155,7 @@ public class DrawingLines extends Application
     private void mouseDragged(double newX, double newY)
     {
         this.l = new Line(this.x, this.y, newX, newY);
-        this.l.setFill(this.colorCB.getValue());
+        this.l.setFill(converter.fromString(this.colorCB.getValue()));
         this.drawPane.getChildren().add(this.l);
 
         this.x = newX;
@@ -133,15 +174,4 @@ public class DrawingLines extends Application
         launch(args);
     }
 
-    @Override
-    public String toString()
-    {
-    	String tmp = "";
-        if (colorCB.getSelectionModel().getSelectedItem().equals(Color.RED)) {
-        	tmp = "Rot";
-        }
-        return tmp;
-    }
-    
-   
 }
