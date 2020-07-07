@@ -73,8 +73,8 @@ public class DrawingLines extends Application
     		}
     		return s;
     	}
-    	
     };
+    
     @Override
     public void start(Stage primaryStage)
     {
