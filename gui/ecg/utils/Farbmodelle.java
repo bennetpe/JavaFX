@@ -8,6 +8,7 @@ public class Farbmodelle {
 	private static float[] CMY = new float[3]; // Subtraktiv von Weiﬂ wird abgezogen
 	private static float[] RGB = new float[3]; // Additiv auf Schwarz wird Addiert
 	static float k = 0.3f;
+	
 	public static void initFarbmodel(float[] farbmodel, float... werte) {
 		if(werte.length == farbmodel.length) {
 			for (int i = 0; i < werte.length; i++) {
