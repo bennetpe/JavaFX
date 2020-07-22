@@ -51,12 +51,12 @@ public class UI extends Application
 
         ComboBox<Country> cb = new ComboBox<>(this.list);
         cb.getSelectionModel().selectFirst();
-
-        this.root.add(this.showTable, 0, 0);
-        this.root.add(this.box, 0, 1);
-        this.root.add(this.labels, 0, 3);
-        this.root.add(this.field, 0, 7);
-        this.root.add(this.delete, 0, 8);
+        this.root.add(cb, 0, 0);
+        this.root.add(this.showTable, 0, 1);
+        this.root.add(this.box, 0, 2);
+        this.root.add(this.labels, 0, 4);
+        this.root.add(this.field, 0, 8);
+        this.root.add(this.delete, 0, 9);
         this.root.setPadding(new Insets(10));
 
         this.labels.add(new Label("Land:"), 0, 0);
@@ -112,7 +112,8 @@ public class UI extends Application
 
         });
 
-        this.box.selectedProperty().addListener((ChangeListener<Boolean>) (combo, oldValue, newValue) -> {
+        this.box.selectedProperty().addListener((ChangeListener<Boolean>) (combo, oldValue, newValue) ->
+        {
             if (newValue)
             {
                 people.setText(this.df.format(cb.getValue().getPeople()) + "");
