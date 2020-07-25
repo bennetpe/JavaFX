@@ -2,9 +2,13 @@ package gui.dragndrop;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.input.*;
-import javafx.scene.layout.*;
+import javafx.scene.control.Label;
+import javafx.scene.input.ClipboardContent;
+import javafx.scene.input.DragEvent;
+import javafx.scene.input.Dragboard;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.input.TransferMode;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
@@ -28,12 +32,12 @@ public class DragAndDrop extends Application
         target.setScaleY(2.0);
         root.getChildren().add(target);
 
-        source.setOnDragDetected(e->onDragDetected(e));
-        target.setOnDragOver(e->onDragOver(e));
-        target.setOnDragEntered(e->onDragEntered(e));
-        target.setOnDragExited(e->onDragExited(e));
-        target.setOnDragDropped(e->onDragDropped(e));
-        source.setOnDragDone(e->onDragDone(e));
+        source.setOnDragDetected(e -> onDragDetected(e));
+        target.setOnDragOver(e -> onDragOver(e));
+        target.setOnDragEntered(e -> onDragEntered(e));
+        target.setOnDragExited(e -> onDragExited(e));
+        target.setOnDragDropped(e -> onDragDropped(e));
+        source.setOnDragDone(e -> onDragDone(e));
 
         Scene scene = new Scene(root, 400, 200);
         stage.setScene(scene);
@@ -44,7 +48,7 @@ public class DragAndDrop extends Application
     private void onDragDetected(MouseEvent e)
     {
         System.out.println("onDragDetected");
-        Label source = (Label)e.getSource();
+        Label source = (Label) e.getSource();
 
         Dragboard db = source.startDragAndDrop(TransferMode.ANY);
 
@@ -52,12 +56,12 @@ public class DragAndDrop extends Application
         content.putString(source.getText());
         db.setContent(content);
     }
-    
+
     private void onDragOver(DragEvent e)
     {
         System.out.println("onDragOver");
-        Label target = (Label)e.getSource();
-        if(e.getGestureSource() != target && e.getDragboard().hasString())
+        Label target = (Label) e.getSource();
+        if (e.getGestureSource() != target && e.getDragboard().hasString())
         {
             e.acceptTransferModes(TransferMode.COPY_OR_MOVE);
         }
@@ -66,8 +70,8 @@ public class DragAndDrop extends Application
     private void onDragEntered(DragEvent e)
     {
         System.out.println("onDragEntered");
-        Label target = (Label)e.getSource();
-        if(e.getGestureSource() != target && e.getDragboard().hasString())
+        Label target = (Label) e.getSource();
+        if (e.getGestureSource() != target && e.getDragboard().hasString())
         {
             target.setTextFill(Color.RED);
         }
@@ -76,17 +80,17 @@ public class DragAndDrop extends Application
     private void onDragExited(DragEvent e)
     {
         System.out.println("onDragExited");
-        Label target = (Label)e.getSource();
+        Label target = (Label) e.getSource();
         target.setTextFill(Color.BLACK);
     }
 
     private void onDragDropped(DragEvent e)
     {
         System.out.println("onDragDropped");
-        Label target = (Label)e.getSource();
+        Label target = (Label) e.getSource();
         Dragboard db = e.getDragboard();
         boolean success = false;
-        if(db.hasString())
+        if (db.hasString())
         {
             target.setText(db.getString());
             success = true;
@@ -97,7 +101,7 @@ public class DragAndDrop extends Application
     private void onDragDone(DragEvent e)
     {
         System.out.println("onDragDone");
-        Label source = (Label)e.getSource();
+        Label source = (Label) e.getSource();
         if (e.getTransferMode() == TransferMode.MOVE)
         {
             source.setText("");
